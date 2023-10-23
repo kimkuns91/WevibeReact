@@ -1,0 +1,34 @@
+.Content01 .RequirementsBodyContentsBoxWrap {
+  margin-bottom: 30px;
+}
+.RequirementsBodyContentsBoxWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.RequirementsBodyContentsBoxWrap .RequirementsBodyContentsBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #909090;
+}
+.RequirementsBodyContentsBoxWrap .Active {
+  background-color: #E4E3FF;
+  border: 1px solid #788DFF;
+}
+
+.RequirementsBodyContentsBoxWrap .RequirementsBodyContentsBox input {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.RequirementsBodyContentsBoxWrap .RequirementsBodyContentsBox .Icon {
+  font-size: 24px;
+}
+.RequirementsBodyContentsBoxWrap .RequirementsBodyContentsBox p {
+  font-size: 20px;
+  margin-top: 15px;
+}

@@ -1,0 +1,27 @@
+.Confirm {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  background-color: #C7CFFF;
+  bottom: 0;
+  left: 0;
+  padding: 20px 80px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.Confirm h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.Confirm button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #7388ff;
+  color: #fff;
+  margin: 0 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}

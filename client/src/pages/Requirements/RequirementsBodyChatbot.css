@@ -1,0 +1,29 @@
+.RequirementsBodyChatbot {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #EDEDED;
+}
+.ChatContents {
+  flex: 1;
+}
+.ChatInputWrap {
+  display: flex;
+  border-top: 1px solid #EDEDED;
+  padding: 10px;
+}
+.ChatInputWrap input{
+  flex: 1;
+  font-size: 14px;
+  border: none;
+}
+.ChatInputWrap input:focus{
+  outline: none;
+}
+.ChatInputWrap button {
+  padding: 10px 10px;
+  border: none;
+  background-color: #7388ff;
+  color: #FFF;
+  border-radius: 10px;
+  margin-left: 10px;
+}
