@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import RequirementControl from "../../components/RequirementsControl/RequirementControl";
 import { useDispatch, useSelector } from "react-redux";
 import { setting } from "../../redux/requirements.slice";

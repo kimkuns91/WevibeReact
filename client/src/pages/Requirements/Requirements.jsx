@@ -1,8 +1,5 @@
 import React from "react";
 import "./RequirementsPage.css";
-import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
-import { useCallback } from "react";
 import ChatBot from "./ChatBot";
 import Sidebar from "./Sidebar";
 import Content01 from "./Content01";

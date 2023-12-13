@@ -5,6 +5,26 @@
 }
 .ChatContents {
   flex: 1;
+  padding: 30px 15px;
+  overflow: auto;
+}
+.ChatContents .messageUser { 
+  padding: 10px;
+  border: 1px solid #777;
+  background-color: #EDEDED;
+  border-radius: 15px;
+  color: #191919;
+  line-height: 1.25em;
+  margin-bottom: 10px;
+}
+.ChatContents .messageBot { 
+  padding: 10px;
+  border: 1px solid #EDEDED;
+  background-color: #7388ff;
+  border-radius: 15px;
+  color: #FFF;
+  line-height: 1.25em;
+  margin-bottom: 10px;
 }
 .ChatInputWrap {
   display: flex;

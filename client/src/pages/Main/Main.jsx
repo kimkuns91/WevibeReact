@@ -39,6 +39,7 @@ const Main = (props) => {
             </li>
             <li>
               <p
+                style={{ cursor: "pointer" }}
                 onClick={() => {
                   props.setRequirementsModal(true);
                 }}

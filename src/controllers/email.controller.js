@@ -36,5 +36,4 @@ exports.postEmail = async (req, res) => {
         res.status(200).json({message : 'Success'})
     })
     .catch(error=>console.log(error))
-  
 }

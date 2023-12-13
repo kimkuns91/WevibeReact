@@ -3,7 +3,7 @@ import "./Confirm.css";
 import { deleted } from "../../redux/requirements.slice";
 
 const Confirm = (props) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // if (window.confirm("작성 중인 요구 사항 명세서가 있습니다.")) {
   //   return setRequirementsModal(true);
   // } else {
@@ -23,8 +23,13 @@ const Confirm = (props) => {
         </button>
         <button
           onClick={() => {
-            dispatch(deleted());
-            props.setConfirm(false);
+            if (window.confirm("작성하던 문서를 삭제하시겠습니까?")) {
+              dispatch(deleted());
+              props.setConfirm(false);
+              return;
+            } else {
+              return;
+            }
           }}
         >
           작성하던 문서 삭제

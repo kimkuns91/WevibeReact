@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import "./RequirementsBodyChatbot.css";
 
 function chatReducer(state, action) {
@@ -24,7 +24,7 @@ function chatReducer(state, action) {
         ...state,
         chatLogs: [
           ...state.chatLogs,
-          { role: "🐭", message: state.streamMessage },
+          { role: "위봇", message: state.streamMessage },
         ],
         streamMessage: "",
       };
@@ -34,12 +34,49 @@ function chatReducer(state, action) {
 }
 
 const ChatBot = (props) => {
+  const chatContentsRef = useRef(null);
   const User = "User";
   const [state, dispatch] = useReducer(chatReducer, {
     message: "",
-    chatLogs: [],
+    chatLogs: [
+      {
+        role: "위봇",
+        message:
+          "안녕하세요. 웹앱 설계사 위봇입니다. 웹앱에 관련된 모든 걸 물어보세요.",
+      },
+    ],
     streamMessage: "",
   });
+  const [ws, setWs] = useState(null);
+
+  useEffect(() => {
+
+    const socket = new WebSocket('wss://websocket.lyncare.co.kr');
+
+    setWs(socket);
+
+    socket.addEventListener("open", () => {
+      console.log("WebSocket 연결이 열렸습니다.");
+    });
+
+    socket.addEventListener("message", (event) => {
+      const data = JSON.parse(event.data);
+      if (data.answer) {
+        dispatch({ type: "ADD_AI_MESSAGE_PART", payload: data.answer });
+      }
+      if (data.status && data.status === "completed") {
+        dispatch({ type: "COMMIT_AI_MESSAGE" });
+      }
+    });
+
+    return () => {
+      socket.close();
+    };
+  }, []);
+  useEffect(() => {
+    const element = chatContentsRef.current;
+    element.scrollTop = element.scrollHeight;
+  }, [state.chatLogs]);
   const handleMessage = (e) => {
     dispatch({
       type: "INPUT_USER_MESSAGE",
@@ -48,20 +85,27 @@ const ChatBot = (props) => {
   };
   const sendMessage = () => {
     if (state.message.trim() === "") return;
-
+    ws.send(JSON.stringify({ text: state.message }));
     dispatch({
       type: "ADD_USER_MESSAGE",
       payload: { role: User, message: state.message },
     });
   };
+
   return (
     <div className="RequirementsBodyChatbot">
-      <div className="ChatContents">
+      <div className="ChatContents" ref={chatContentsRef}>
         {state.chatLogs.map((msg, index) => (
-          <div key={index} className="message">
+          <div
+            key={index}
+            className={msg.role === "User" ? "messageUser" : "messageBot"}
+          >
             {msg.role} : {msg.message}
           </div>
         ))}
+        {state.streamMessage && (
+          <div className="messageBot">위봇 : {state.streamMessage}</div>
+        )}
       </div>
       <div className="ChatInputWrap">
         <input

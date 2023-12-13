@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import RequirementControl from "../../components/RequirementsControl/RequirementControl";
 import { useDispatch, useSelector } from "react-redux";
 import { setting } from "../../redux/requirements.slice";
@@ -16,107 +15,109 @@ const Content02 = (props) => {
   };
   return (
     <div className="RequirementsBodyContents">
-      <div className="RequireContent">
-        <div className="RequireHead">
-          <h3 className="RequireTitle">
-            프로젝트 진행 분류 <span className="Red">*</span>
-          </h3>
+      <div className="RequireContentWrap">
+        <div className="RequireContent">
+          <div className="RequireHead">
+            <h3 className="RequireTitle">
+              프로젝트 진행 분류 <span className="Red">*</span>
+            </h3>
+          </div>
+          <div className="RequireInputWrap">
+            <input
+              type="checkbox"
+              checked={projectProgress === "new"}
+              id="new"
+              onChange={async () => {
+                await dispatch(
+                  setting({
+                    projectProgress: "new",
+                  })
+                );
+              }}
+            />
+            <label htmlFor="new" className="RequireDesc">
+              신규 프로젝트를 진행하려 합니다.
+            </label>
+          </div>
+          <div className="RequireInputWrap">
+            <input
+              type="checkbox"
+              checked={projectProgress === "maintenance"}
+              id="maintenance"
+              onChange={async () => {
+                await dispatch(
+                  setting({
+                    projectProgress: "maintenance",
+                  })
+                );
+              }}
+            />
+            <label htmlFor="maintenance" className="RequireDesc">
+              운영 중인 서비스의 리뉴얼 또는 유지보수를 하려 합니다.
+            </label>
+          </div>
         </div>
-        <div className="RequireInputWrap">
-          <input
-            type="checkbox"
-            checked={projectProgress === "new"}
-            id="new"
-            onChange={async () => {
-              await dispatch(
-                setting({
-                  projectProgress: "new",
-                })
-              );
-            }}
-          />
-          <label htmlFor="new" className="RequireDesc">
-            신규 프로젝트를 진행하려 합니다.
-          </label>
-        </div>
-        <div className="RequireInputWrap">
-          <input
-            type="checkbox"
-            checked={projectProgress === "maintenance"}
-            id="maintenance"
-            onChange={async () => {
-              await dispatch(
-                setting({
-                  projectProgress: "maintenance",
-                })
-              );
-            }}
-          />
-          <label htmlFor="maintenance" className="RequireDesc">
-            운영 중인 서비스의 리뉴얼 또는 유지보수를 하려 합니다.
-          </label>
-        </div>
-      </div>
-      <div className="RequireContent">
-        <div className="RequireHead">
-          <h3 className="RequireTitle">
-            기획 상태 <span className="Red">*</span>
-          </h3>
-          <p className="RequireSubTitle">
-            업무 범위 산정과 예산 및 일정 상담을 위해 현재 기획 상태를
-            선택해주세요
-          </p>
-        </div>
-        <div className="RequireInputWrap">
-          <input
-            type="checkbox"
-            checked={planningStatus === 1}
-            id="planningStatus01"
-            onChange={async () => {
-              await dispatch(
-                setting({
-                  planningStatus: 1,
-                })
-              );
-            }}
-          />
-          <label htmlFor="planningStatus01" className="RequireDesc">
-            아이디어만 있습니다.
-          </label>
-        </div>
-        <div className="RequireInputWrap">
-          <input
-            type="checkbox"
-            checked={planningStatus === 2}
-            id="planningStatus02"
-            onChange={async () => {
-              await dispatch(
-                setting({
-                  planningStatus: 2,
-                })
-              );
-            }}
-          />
-          <label htmlFor="planningStatus02" className="RequireDesc">
-            필요한 내용들을 간단히 정리해두었습니다.
-          </label>
-        </div>
-        <div className="RequireInputWrap">
-          <input
-            type="checkbox"
-            checked={planningStatus === 3}
-            id="planningStatus03"
-            onChange={async () => {
-              await dispatch(
-                setting({
-                  planningStatus: 3,
-                })
-              );
-            }}
-          />
-          <label htmlFor="planningStatus03" className="RequireDesc">
-            상세한 기획 문서가 존재합니다.
-          </label>
+        <div className="RequireContent">
+          <div className="RequireHead">
+            <h3 className="RequireTitle">
+              기획 상태 <span className="Red">*</span>
+            </h3>
+            <p className="RequireSubTitle">
+              업무 범위 산정과 예산 및 일정 상담을 위해 현재 기획 상태를
+              선택해주세요
+            </p>
+          </div>
+          <div className="RequireInputWrap">
+            <input
+              type="checkbox"
+              checked={planningStatus === 1}
+              id="planningStatus01"
+              onChange={async () => {
+                await dispatch(
+                  setting({
+                    planningStatus: 1,
+                  })
+                );
+              }}
+            />
+            <label htmlFor="planningStatus01" className="RequireDesc">
+              아이디어만 있습니다.
+            </label>
+          </div>
+          <div className="RequireInputWrap">
+            <input
+              type="checkbox"
+              checked={planningStatus === 2}
+              id="planningStatus02"
+              onChange={async () => {
+                await dispatch(
+                  setting({
+                    planningStatus: 2,
+                  })
+                );
+              }}
+            />
+            <label htmlFor="planningStatus02" className="RequireDesc">
+              필요한 내용들을 간단히 정리해두었습니다.
+            </label>
+          </div>
+          <div className="RequireInputWrap">
+            <input
+              type="checkbox"
+              checked={planningStatus === 3}
+              id="planningStatus03"
+              onChange={async () => {
+                await dispatch(
+                  setting({
+                    planningStatus: 3,
+                  })
+                );
+              }}
+            />
+            <label htmlFor="planningStatus03" className="RequireDesc">
+              상세한 기획 문서가 존재합니다.
+            </label>
+          </div>
         </div>
       </div>
       {/* <div className="RequireContent">
