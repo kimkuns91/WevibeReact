@@ -32,7 +32,7 @@ const Main = (props) => {
               <span>|</span>
             </li>
             <li>
-              <a href="/Works">Works</a>
+              <a href="/#Works">Works</a>
             </li>
             <li>
               <span>|</span>
@@ -96,6 +96,13 @@ const Main = (props) => {
               className="kun-woo"
               src="/img/kun-woo.png"
               alt="Kun-woo Lead PM"
+            />
+          </li>
+          <li>
+            <img
+              className="cheol-gyu"
+              src="/img/cheol-gyu.png"
+              alt="cheol-gyu BE Developer"
             />
           </li>
           <li>
