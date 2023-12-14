@@ -121,9 +121,9 @@ const Main = (props) => {
           </li>
           <li>
             <img
-              className="danny"
-              src="/img/danny.png"
-              alt="danny Lead UX/UI"
+              className="derrick"
+              src="/img/derrick.png"
+              alt="derrick Lead UX/UI"
             />
           </li>
           <li>
