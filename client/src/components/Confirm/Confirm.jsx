@@ -11,7 +11,7 @@ const Confirm = (props) => {
   // }
   return (
     <div className="Confirm">
-      <h3>작성하시던 요구사항 명세서가 있습니다.</h3>
+      <h3>작성하시던 프로젝트 정보가 있습니다.</h3>
       <div>
         <button
           onClick={() => {
