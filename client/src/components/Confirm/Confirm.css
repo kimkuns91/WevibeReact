@@ -10,6 +10,7 @@
   align-items: center;
   flex-direction: row;
   box-sizing: border-box;
+  z-index: 100;
 }
 .Confirm h3 {
   font-size: 16px;
@@ -24,4 +25,27 @@
   margin: 0 20px;
   border-radius: 25px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 999px) {
+  .Confirm{
+    padding: 26px  10px 16px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .Confirm{
+   display: block;
+   text-align: center;
+  }
+  .Confirm div {
+    margin-top: 20px;
+  }
+
+} 
+@media screen and (max-width: 600px) {
+  .Confirm button{
+    display: block;
+    margin: 10px auto;
+  }
 }
