@@ -41,3 +41,9 @@
   color: #212121;
   font-weight: 800;
 }
+
+@media screen and (max-width: 1100px){
+  .RequirementsBodySidebar{
+    border-right: 0px;
+  }
+}

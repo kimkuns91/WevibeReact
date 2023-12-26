@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 const Main = (props) => {
+  
   return (
     <div className="WeVibe">
       <div className="header">

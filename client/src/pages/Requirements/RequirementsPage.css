@@ -220,3 +220,13 @@
   border: 1px solid #000;
   border-radius: 10px;
 }
+
+@media screen and (max-width: 1100px){
+  .RequirementsBody{
+    display: block;
+  }
+  .RequirementsWrap{
+    overflow: scroll;
+  }
+
+}
