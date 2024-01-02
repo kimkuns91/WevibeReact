@@ -339,7 +339,7 @@ p .ai_styling {
 
 /* geade */
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
   .team_name {
     width: 99%;
     flex-wrap: wrap-reverse;
@@ -370,6 +370,9 @@ p .ai_styling {
   }
   .dev {
     margin-top: 170px;
+  }
+  .h_container {
+    padding-bottom: 80px;
   }
   .h_container p {
     font-size: 2.2vw;
@@ -487,13 +490,15 @@ p .ai_styling {
     margin: 0 auto;
     text-align: left;
   }
+  .webButton {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
   .category li {
     font-size: 16px;
   }
- 
 
   .h_container p {
     font-size: 20px;
@@ -517,25 +522,22 @@ p .ai_styling {
     margin-right: 4px;
   }
 
-
   .lawline h2 {
     font-size: 30px;
   }
 
 
-
-
-} 
-@media screen and (max-width: 630px){
+}
+@media screen and (max-width: 630px) {
   .category li {
     font-size: 14px;
   }
-  .Mobile_none{
+  .Mobile_none {
     display: none;
   }
 }
-@media screen and (max-width: 425px){
-  .h_nav{
+@media screen and (max-width: 425px) {
+  .h_nav {
     justify-content: space-between;
   }
   .category li {

@@ -69,7 +69,7 @@ const Main = (props) => {
           </p>
           <p>위바이브는 AI 기반으로 지속 발전 가능한 성장 모델을 발굴하여</p>
           <p>새로운 경험과 가능성을 모색합니다.</p>
-          <input type="button" value="프로젝트 의뢰하기" style={{ cursor: "pointer", backgroundColor:'#bdc7ff',padding:'16px 35px',margin:'30px 0px 75px', fontSize : '17px' , fontWeight:700, borderRadius:'8px', border:'0px ' }} 
+          <input className="webButton" type="button" value="프로젝트 의뢰하기" style={{ cursor: "pointer", backgroundColor:'#bdc7ff',padding:'16px 35px',margin:'30px 0px 75px', fontSize : '17px' , fontWeight:700, borderRadius:'8px', border:'0px ' }} 
                   onClick={() => {
                   props.setRequirementsModal(true);
                 }} />
