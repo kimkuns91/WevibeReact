@@ -47,3 +47,10 @@
   border-radius: 10px;
   margin-left: 10px;
 }
+
+
+@media screen and (max-width: 999px) {
+  .ChatInputWrap button {
+    padding: 10px 4px;
+  }
+}
