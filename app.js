@@ -7,15 +7,18 @@ var path = require("path");
 var app = express();
 const PORT = 8080;
 
+const corsOptions = {
+  origin: ["https://wevibe.co.kr", "http://localhost:3000"],
+};
 // Middleware for CORS
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Middleware for parsing requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Middleware to serve static files
-app.use(express.static(path.join(__dirname, 'src/build')));
+app.use(express.static(path.join(__dirname, "src/build")));
 
 // Trust the proxy for secure requests
 app.enable("trust proxy");
@@ -30,16 +33,16 @@ app.use(function (req, res, next) {
 });
 
 // API Routes
-const mainRouter = require('./src/routes/index');
-app.use('/api', mainRouter);
+const mainRouter = require("./src/routes/index");
+app.use("/api", mainRouter);
 
 // Catch-all route to serve the React App
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src/build', 'index.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "src/build", "index.html"));
 });
 // Catch-all route to serve the React App
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src/build', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "src/build", "index.html"));
 });
 
 // 404 handler
@@ -52,7 +55,7 @@ app.use(function (err, req, res, next) {
   // Set locals, only provide error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
-  
+
   // Render the error page
   res.status(err.status || 500);
 });
