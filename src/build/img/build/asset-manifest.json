@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.34bf6b05.css",
+    "main.js": "/static/js/main.f8e0edf4.js",
+    "static/js/787.f657fcd7.chunk.js": "/static/js/787.f657fcd7.chunk.js",
+    "static/media/HelloIc.png": "/static/media/HelloIc.ac3236e6100d3b7748fc.png",
+    "static/media/HelveticaExt.ttf": "/static/media/HelveticaExt.d5e50e4d8d0cae1b9333.ttf",
+    "static/media/Helvetica Ultra Compressed.otf": "/static/media/Helvetica Ultra Compressed.516989ea9dd2eea27157.otf",
+    "index.html": "/index.html",
+    "main.34bf6b05.css.map": "/static/css/main.34bf6b05.css.map",
+    "main.f8e0edf4.js.map": "/static/js/main.f8e0edf4.js.map",
+    "787.f657fcd7.chunk.js.map": "/static/js/787.f657fcd7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34bf6b05.css",
+    "static/js/main.f8e0edf4.js"
+  ]
+}
